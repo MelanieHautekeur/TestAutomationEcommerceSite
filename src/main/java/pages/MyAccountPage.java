@@ -16,25 +16,25 @@ public class MyAccountPage {
 
 	//Element Library
 	@FindBy(how = How.XPATH, using = "//a[@title='Women']")
-	WebElement Women_Button;
+	WebElement womenButton;
 	@FindBy(how = How.XPATH, using = "//*[@id='block_top_menu']/ul/li[1]/ul/li[1]/ul/li[1]/a")
-	WebElement Tshirts_Button;
+	WebElement tshirtsButton;
 	@FindBy(how = How.XPATH, using = "//*[@id='center_column']/div/div[1]/ul/li[1]/a")
-	WebElement OrderHistoryAndDetails_Button;
+	WebElement orderHistoryAndDetailsButton;
 	@FindBy(how = How.XPATH, using = "//a[@class='account']/span")
-	WebElement NameOnAccount;
+	WebElement nameOnAccount;
 
 	//InteractiveMethods
 	public void hoverOverWomenButton() {
 		Actions actions = new Actions(driver);
-		actions.moveToElement(Women_Button).perform();
+		actions.moveToElement(womenButton).perform();
 	}
 
 	public void clickTshirtsButton() {
-		Tshirts_Button.click();
+		tshirtsButton.click();
 	}
 
 	public void clickOrderHistoryAndDetailsButton() {
-		OrderHistoryAndDetails_Button.click();
+		orderHistoryAndDetailsButton.click();
 	}
 }
