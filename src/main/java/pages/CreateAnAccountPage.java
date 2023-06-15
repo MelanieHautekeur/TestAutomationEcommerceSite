@@ -34,22 +34,22 @@ public class CreateAnAccountPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//input[@id='phone_mobile']") WebElement cellPhoneField;
 	@FindBy(how = How.XPATH, using = "//input[@id='alias']") WebElement aliasAddressField;
 	@FindBy(how = How.XPATH, using = "//button[@id='submitAccount']") WebElement registerButton;
-	@FindBy(how = How.XPATH, using = "//div[@id=\"center_column\"]/div/p") WebElement ErrorAlertForMandatoryFields;
+	@FindBy(how = How.XPATH, using = "//div[@id=\"center_column\"]/div/p") WebElement errorAlertForMandatoryFields;
 	
 	public void clickMrRadioButton() {
 		mrRadioButton.click();
 	}
 	
-	public void fillFirstnameField(String FirstName) {
-		firstnameField.sendKeys(FirstName);
+	public void fillFirstnameField(String firstname) {
+		firstnameField.sendKeys(firstname);
 	}
 	
-	public void fillLastnameField(String LastName) {
-		lastnameField.sendKeys(LastName);
+	public void fillLastnameField(String lastname) {
+		lastnameField.sendKeys(lastname);
 	}
 	
-	public void fillPasswordField(String Password) {
-		passwordField.sendKeys(Password);
+	public void fillPasswordField(String password) {
+		passwordField.sendKeys(password);
 	}
 	
 	public void selectDaySelection(String day) {
@@ -73,36 +73,36 @@ public class CreateAnAccountPage extends BasePage {
 		specialOfferCheckBox.click();
 	}
 	
-	public void fillAddressFirstnameField(String aFirstName) {
-		addressFirstnameField.sendKeys(aFirstName);
+	public void fillAddressFirstnameField(String aFirstname) {
+		addressFirstnameField.sendKeys(aFirstname);
 	}
 	
-	public void fillAddressLastnameField(String aLastName) {
-		addressLastnameField.sendKeys(aLastName);
+	public void fillAddressLastnameField(String aLastname) {
+		addressLastnameField.sendKeys(aLastname);
 	}
 	
-	public void fillAddressCompanyField(String Company) {
-		addressCompanyField.sendKeys(Company);
+	public void fillAddressCompanyField(String company) {
+		addressCompanyField.sendKeys(company);
 	}
 
-	public void fillAddress1Field(String Address) {
-		address1Field.sendKeys(Address);
+	public void fillAddress1Field(String address) {
+		address1Field.sendKeys(address);
 	}
 
-	public void fillCityField(String City) {
-		cityField.sendKeys(City);
+	public void fillCityField(String city) {
+		cityField.sendKeys(city);
 	}
 
-	public void selectStateField(String State) {
-		selectFromDropdownByVisibleText(stateField, State);
+	public void selectStateField(String state) {
+		selectFromDropdownByVisibleText(stateField, state);
 	}
 
-	public void fillZipCodeField(String ZipCode) {
-		zipCodeField.sendKeys(removeDecimalPoint(ZipCode));
+	public void fillZipCodeField(String zipCode) {
+		zipCodeField.sendKeys(removeDecimalPoint(zipCode));
 	}
 
-	public void selectCountryField(String Country) {
-		selectFromDropdownByVisibleText(countryField, Country);
+	public void selectCountryField(String country) {
+		selectFromDropdownByVisibleText(countryField, country);
 	}
 
 	public void fillCellPhoneField() {
@@ -120,7 +120,7 @@ public class CreateAnAccountPage extends BasePage {
 
 	public void verifyErrorAlertForMandatoryFields() {
 		
-		if(ErrorAlertForMandatoryFields.isDisplayed() == true) {
+		if(errorAlertForMandatoryFields.isDisplayed() == true) {
 			System.out.println("Success! Error Alert For Mandatory Fields is displayed");
 		}else {
 			System.out.println("Failure, Error Alert For Mandatory Fields is not displayed");
