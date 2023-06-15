@@ -1,5 +1,7 @@
 package pages;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,21 +11,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BasePage {
 
 	public int randomNumberGenerator() {
-		int randNum = (int) (Math.random() * 999 + 100);
-		return randNum;
+		return (int) ThreadLocalRandom.current().nextInt(100, 1000);
 	}
 
 	public int dateNumberGenerator() {
-		int randNum = (int) (Math.random() * 31 + 1);
-		return randNum;
+		return (int) ThreadLocalRandom.current().nextInt(1, 32);
 	}
 
 	public String phoneNumberGenerator() {
-		int areaCode = (int) (Math.random() * 999 + 100);
-		int firstThree = (int) (Math.random() * 999 + 100);
-		int lastfour = (int) (Math.random() * 9999 + 1000);
-		String phoneNum = areaCode + " " + firstThree + " " + lastfour;
-		return phoneNum;
+		int areaCode = (int) ThreadLocalRandom.current().nextInt(100, 1000);
+		int firstThree = (int) ThreadLocalRandom.current().nextInt(100, 1000);
+		int lastfour = (int) ThreadLocalRandom.current().nextInt(1000, 10000);
+		return areaCode + " " + firstThree + " " + lastfour;
 	}
 
 	public void selectFromDropdownByVisibleText(WebElement element, String input) {
@@ -42,8 +41,7 @@ public class BasePage {
 
 	public double convertStringToDouble(WebElement element) {
 		String stringElement = element.getText().substring(1);
-		double doubleElement = Double.parseDouble(stringElement);
-		return doubleElement;
+		return Double.parseDouble(stringElement);
 	}
 
 	public void waitForElement(WebDriver driver, WebElement element) {
