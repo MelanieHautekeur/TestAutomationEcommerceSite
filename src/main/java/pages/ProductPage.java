@@ -8,7 +8,7 @@ import org.openqa.selenium.support.How;
 public class ProductPage extends BasePage {
 
 	WebDriver driver;
-	double DblCurrentTotal;
+	double dblCurrentTotal;
 
 	public ProductPage(WebDriver driver) {
 		this.driver = driver;
@@ -58,19 +58,19 @@ public class ProductPage extends BasePage {
 		IncreaseQuantity_Button.click();
 	}
 
-	public void TestTotalCalculation() throws InterruptedException {
+	public void testTotalCalculation() throws InterruptedException {
 
-		double DblCurrentTotal = convertStringToDouble(TotalProductPrice);
+		double dblCurrentTotal = convertStringToDouble(TotalProductPrice);
 		
 		clickIncreaseQuantityButton();
 		
-		double DblProductPrc = convertStringToDouble(ProductPrice);
+		double dblProductPrc = convertStringToDouble(ProductPrice);
 
 		Thread.sleep(2000);
 
-		double DblModifiedTotal = convertStringToDouble(TotalProductPrice);
+		double dblModifiedTotal = convertStringToDouble(TotalProductPrice);
 		
-		if (DblCurrentTotal + DblProductPrc == DblModifiedTotal) {
+		if (dblCurrentTotal + dblProductPrc == dblModifiedTotal) {
 			System.out.println("Success! the calculation is correct");
 		} else {
 			System.out.println("Failure, the calculation is wrong");

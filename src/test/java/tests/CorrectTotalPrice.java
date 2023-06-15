@@ -36,59 +36,59 @@ public class CorrectTotalPrice {
 	// Starting browser and navigating to website
 	// 1. Open link http://automationpractice.com/index.php
 	@BeforeMethod
-	public void StartBrowser() {
-		driver = BrowserFactory.LaunchBrowser();
+	public void startBrowser() {
+		driver = BrowserFactory.launchBrowser();
 	}
 
 	@Test
-	public void TestCorrectTotalPrice() throws InterruptedException {
+	public void testCorrectTotalPrice() throws InterruptedException {
 
 		ExcelReader reader = new ExcelReader("./data/testdata.xlsx");
 		String username = reader.getCellData("LoginInfo", "username", 2);
 		String password = reader.getCellData("LoginInfo", "password", 2);
 
-		MainPage MainP = PageFactory.initElements(driver, MainPage.class);
-		MainP.ClickOnSignInButton();
+		MainPage mainP = PageFactory.initElements(driver, MainPage.class);
+		mainP.clickOnSignInButton();
 
 		// 2. Login to the website.
-		LoginPage LoginP = PageFactory.initElements(driver, LoginPage.class);
-		LoginP.enterEMailAddress(username);
-		LoginP.enterPassword(password);
-		LoginP.clickSigninButton();
+		LoginPage loginP = PageFactory.initElements(driver, LoginPage.class);
+		loginP.enterEMailAddress(username);
+		loginP.enterPassword(password);
+		loginP.clickSigninButton();
 
-		MyAccountPage MyAcc = PageFactory.initElements(driver, MyAccountPage.class);
+		MyAccountPage myAcc = PageFactory.initElements(driver, MyAccountPage.class);
 		// 3. Move your cursor over Women's link.
-		MyAcc.Hover_Over_Women_Button();
+		myAcc.hoverOverWomenButton();
 		// 4. Click on sub menu 'T-shirts'.
-		MyAcc.Click_Tshirts_Button();
+		myAcc.clickTshirtsButton();
 
 		TshirtsPage ts = PageFactory.initElements(driver, TshirtsPage.class);
 		// 5. Mouse hover on the first product displayed.
-		ts.Hover_Over_Product();
+		ts.hoverOverProduct();
 		// 6. 'More' button will be displayed, click on 'More' button.
-		ts.Click_More_Button_Product_One();
+		ts.clickMoreButtonProductOne();
 
-		ProductPage ProdP = PageFactory.initElements(driver, ProductPage.class);
+		ProductPage prodP = PageFactory.initElements(driver, ProductPage.class);
 		// 7. Make sure quantity is set to 1.
-		ProdP.enterQuantity("1");
+		prodP.enterQuantity("1");
 		// 8. Select size 'L'
-		ProdP.selectSize("L");
+		prodP.selectSize("L");
 		// 9. Select color.
-		ProdP.selectColor();
+		prodP.selectColor();
 		// 10. Click 'Add to Cart' button.
-		ProdP.clickAddToCartButton();
+		prodP.clickAddToCartButton();
 		// 11. Click 'Proceed to checkout' button.
-		ProdP.clickProceedToCheckoutButton();
+		prodP.clickProceedToCheckoutButton();
 		// 12. Change the quantity to 2.
 		// 13. Verify that Total price is changing and reflecting correct price.
-		ProdP.TestTotalCalculation();
+		prodP.testTotalCalculation();
 
 		Thread.sleep(5000);
 	}
 
 	// Closing browser
 	@AfterMethod
-	public void CloseBrowser() {
-		BrowserFactory.CloseBrowser();
+	public void closeBrowser() {
+		BrowserFactory.closeBrowser();
 	}
 }

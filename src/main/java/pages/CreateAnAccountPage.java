@@ -114,11 +114,11 @@ public class CreateAnAccountPage extends BasePage {
 		AliasAddress_Field.sendKeys(alias);
 	}
 
-	public void Click_Register_Button() {
+	public void clickRegisterButton() {
 		Register_Button.click();
 	}
 
-	public void VerifyErrorAlertForMandatoryFields() {
+	public void verifyErrorAlertForMandatoryFields() {
 		
 		if(ErrorAlertForMandatoryFields.isDisplayed() == true) {
 			System.out.println("Success! Error Alert For Mandatory Fields is displayed");
