@@ -11,17 +11,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BasePage {
 
 	public int randomNumberGenerator() {
-		return (int) ThreadLocalRandom.current().nextInt(100, 1000);
+		return ThreadLocalRandom.current().nextInt(100, 1000);
 	}
 
 	public int dateNumberGenerator() {
-		return (int) ThreadLocalRandom.current().nextInt(1, 32);
+		return ThreadLocalRandom.current().nextInt(1, 32);
 	}
 
 	public String phoneNumberGenerator() {
-		int areaCode = (int) ThreadLocalRandom.current().nextInt(100, 1000);
-		int firstThree = (int) ThreadLocalRandom.current().nextInt(100, 1000);
-		int lastfour = (int) ThreadLocalRandom.current().nextInt(1000, 10000);
+		int areaCode = ThreadLocalRandom.current().nextInt(100, 1000);
+		int firstThree = ThreadLocalRandom.current().nextInt(100, 1000);
+		int lastfour = ThreadLocalRandom.current().nextInt(1000, 10000);
 		return areaCode + " " + firstThree + " " + lastfour;
 	}
 

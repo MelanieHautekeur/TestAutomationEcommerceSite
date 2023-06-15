@@ -60,7 +60,7 @@ public class ProductPage extends BasePage {
 
 	public void testTotalCalculation() throws InterruptedException {
 
-		double dblCurrentTotal = convertStringToDouble(TotalProductPrice);
+		double currentTotal = convertStringToDouble(TotalProductPrice);
 		
 		clickIncreaseQuantityButton();
 		
@@ -70,7 +70,7 @@ public class ProductPage extends BasePage {
 
 		double dblModifiedTotal = convertStringToDouble(TotalProductPrice);
 		
-		if (dblCurrentTotal + dblProductPrc == dblModifiedTotal) {
+		if (currentTotal + dblProductPrc == dblModifiedTotal) {
 			System.out.println("Success! the calculation is correct");
 		} else {
 			System.out.println("Failure, the calculation is wrong");
