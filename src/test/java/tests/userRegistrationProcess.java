@@ -17,7 +17,7 @@ Steps to Automate:
 6. Click on Register button.
 7. Validate that user is created.*/
 
-public class UserRegistrationProcess {
+public class userRegistrationProcess {
 	WebDriver driver;
 
 	// 1. Open this url http://automationpractice.com/index.php

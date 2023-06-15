@@ -23,7 +23,7 @@ Steps to Automate:
 8. Get the page title and print it. Verify that value matches with output of point no. 4
 9. Close the browser.*/
 
-public class ClickFirstMenuLinkAndPrintPageTitle {
+public class clickFirstMenuLinkAndPrintPageTitle {
 	WebDriver driver;
 
 	/*

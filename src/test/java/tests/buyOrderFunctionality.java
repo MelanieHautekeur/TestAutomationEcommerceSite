@@ -32,7 +32,7 @@ Steps to Automate:
 12. Complete the buy order process till payment.
 13. Make sure that Product is ordered.*/
 
-public class BuyOrderFunctionality {
+public class buyOrderFunctionality {
 
 	WebDriver driver;
 

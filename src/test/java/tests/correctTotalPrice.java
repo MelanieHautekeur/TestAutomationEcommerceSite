@@ -30,7 +30,7 @@ Steps to Automate:
 12. Change the quantity to 2.
 13. Verify that Total price is changing and reflecting correct price.*/
 
-public class CorrectTotalPrice {
+public class correctTotalPrice {
 	WebDriver driver;
 
 	// Starting browser and navigating to website
@@ -82,8 +82,6 @@ public class CorrectTotalPrice {
 		// 12. Change the quantity to 2.
 		// 13. Verify that Total price is changing and reflecting correct price.
 		prodP.testTotalCalculation();
-
-		Thread.sleep(5000);
 	}
 
 	// Closing browser
