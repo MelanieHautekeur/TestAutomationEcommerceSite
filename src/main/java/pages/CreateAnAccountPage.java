@@ -120,7 +120,7 @@ public class CreateAnAccountPage extends BasePage {
 
 	public void verifyErrorAlertForMandatoryFields() {
 		
-		if(errorAlertForMandatoryFields.isDisplayed() == true) {
+		if(errorAlertForMandatoryFields.isDisplayed()) {
 			System.out.println("Success! Error Alert For Mandatory Fields is displayed");
 		}else {
 			System.out.println("Failure, Error Alert For Mandatory Fields is not displayed");

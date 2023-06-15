@@ -10,12 +10,10 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelReader {
 	// Global Variables
-	public String path;
-	public FileInputStream fis = null;
+	private String path;
+	private FileInputStream fis = null;
 	private XSSFWorkbook workbook = null;
 	private XSSFSheet sheet = null;
-	private XSSFRow row = null;
-	private XSSFCell cell = null;
 
 	// Constructor to initialize variables
 	public ExcelReader(String path) {
@@ -28,6 +26,14 @@ public class ExcelReader {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}	
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
 	}
 
 	// Method to call the value
@@ -38,6 +44,8 @@ public class ExcelReader {
 		sheet = workbook.getSheetAt(index);
 
 		// For Row
+		XSSFCell cell;
+		XSSFRow row;
 		row = sheet.getRow(0);
 		for (int i = 0; i < row.getLastCellNum(); i++) {
 			if (row.getCell(i).getStringCellValue().trim().equals(colName.trim())) {
@@ -57,7 +65,6 @@ public class ExcelReader {
 			return String.valueOf(cell.getNumericCellValue());
 		else
 			return null;
-		// -------------------------------------
 
 	}
 }

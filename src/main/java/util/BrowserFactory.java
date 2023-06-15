@@ -9,6 +9,10 @@ public class BrowserFactory {
 	
 	static WebDriver driver;
 	
+	private BrowserFactory() {
+		throw new IllegalStateException("Utility class");
+	}
+	
 	//Open Browser
 	public static WebDriver launchBrowser() {
 		

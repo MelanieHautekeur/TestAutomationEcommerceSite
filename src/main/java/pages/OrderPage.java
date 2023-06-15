@@ -22,7 +22,6 @@ public class OrderPage {
 	@FindBy(how = How.XPATH, using = "//span[contains(text(),'I confirm my order')]")WebElement iConfirmMyOrderPaymentPage;
 	@FindBy(how = How.XPATH, using = "//*[@id='header']/div[2]/div/div/nav/div[1]/a")WebElement myAccountButton;
 	@FindBy(how = How.XPATH, using = "//p[@class='cheque-indent']/strong[@class='dark']")WebElement orderConfirmation;
-	//@FindBy(how = How.XPATH, using = "//div[@class='box']/[6]")WebElement OrderReference_Text;
 	
 	//InteractiveMethods
 	public void clickProceedToCheckout() {
@@ -62,12 +61,6 @@ public class OrderPage {
 		}
 		
 	}
-	
-	/*
-	 * public String Get_OrderReference_Text() { String Sub_Str =
-	 * OrderReference_Text.getText(); String Order_Ref_num = Sub_Str.substring(45,
-	 * 53); return Order_Ref_num; }
-	 */
 	
 
 }
